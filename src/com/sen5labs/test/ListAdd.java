@@ -42,13 +42,9 @@ public class ListAdd {
 
     // 检查数组是否是顺序存储的
     public static boolean checkSort(int a[]) {
-        boolean change = true; // 这个标志位是一种优化程序的方法，可以看看我写的冒泡排序优化就会明白了
-        for (int i = 0; i < a.length - 1 && change; i++) {
-            for (int j = i + 1; j < a.length; j++)
-                if (a[j - 1] > a[j])
-                    return false;
-                else
-                    change = false;
+        for (int i = 0; i < a.length - 1; i++) {
+            if (a[i] > a[i + 1])
+                return false;
         }
         return true;
     }

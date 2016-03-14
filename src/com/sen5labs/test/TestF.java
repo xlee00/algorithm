@@ -68,6 +68,10 @@ class Test2 {
     private static ArrayList<Integer> results = new ArrayList<Integer>();
 
     public void math4(int n) {
+        if (results.size() > n) {
+            System.out.print(" " + results.get(n));
+            return;
+        }
         results.add(-1);
         results.add(1);
         results.add(1);

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<root>  
+    <description>iptv channel servers.</description>  
+	<servers>
+		<host name="customer"><url>http://www.baidu.com</url></host>
+		<host name="sen5lab"><url>http://xlee.sinaapp.com</url></host>
+	</servers>
+</root>
