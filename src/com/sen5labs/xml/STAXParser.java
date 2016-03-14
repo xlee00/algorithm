@@ -25,6 +25,7 @@ import javax.xml.stream.events.XMLEvent;
  *         create at 2016-3-14 下午6:50:56
  */
 public class STAXParser implements ServerParser {
+    private XMLInputFactory factory;
     private List<Host> mHostlist = null;
     /**
      * <Host>节点开始时压栈，结束时出栈
@@ -46,8 +47,6 @@ public class STAXParser implements ServerParser {
         }
         return mHostlist;
     }
-
-    XMLInputFactory factory;
 
     public STAXParser() {
         factory = XMLInputFactory.newInstance();

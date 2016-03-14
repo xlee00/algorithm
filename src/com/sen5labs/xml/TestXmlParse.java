@@ -21,7 +21,7 @@ public class TestXmlParse {
         String xmlFile = Constant.XML_FILE_NAME;
         ServerParser parser = null;
         try {
-            String parseType = Constant.PARSE_TYPE_JDOM;
+            String parseType = Constant.PARSE_TYPE_SAX;
             int count = 1;
             if (args.length > 0) {
                 parseType = args[0];
@@ -32,13 +32,13 @@ public class TestXmlParse {
             long startTime = System.currentTimeMillis();
             if (Constant.PARSE_TYPE_SAX.equalsIgnoreCase(parseType)) {
                 parser = new JDKSaxParser();
-            } else if (Constant.PARSE_TYPE_DOM.equals(parseType)) {
+            } else if (Constant.PARSE_TYPE_DOM.equalsIgnoreCase(parseType)) {
                 parser = new JDKDomParser();
-            } else if (Constant.PARSE_TYPE_DOM4J.equals(parseType)) {
+            } else if (Constant.PARSE_TYPE_DOM4J.equalsIgnoreCase(parseType)) {
                 parser = new Dom4JParser();
-            } else if (Constant.PARSE_TYPE_STAX.equals(parseType)) {
+            } else if (Constant.PARSE_TYPE_STAX.equalsIgnoreCase(parseType)) {
                 parser = new STAXParser();
-            } else if (Constant.PARSE_TYPE_JDOM.equals(parseType)) {
+            } else if (Constant.PARSE_TYPE_JDOM.equalsIgnoreCase(parseType)) {
                 parser = new JDomParser();
             }
             List<Host> hostList = null;
@@ -53,8 +53,8 @@ public class TestXmlParse {
                 System.out.println(host);
             }
             long endTime = System.currentTimeMillis();
-            System.out.println("Exceute parse \"" + count + "\" times. and spent \"" + (endTime - startTime)
-                    + "\" milliseconds.");
+            System.out.println("parseType = " + parseType + " Exceute parse \"" + count + "\" times. and spent \""
+                    + (endTime - startTime) + "\" milliseconds.");
         } catch (Exception e) {
             e.printStackTrace();
         }
