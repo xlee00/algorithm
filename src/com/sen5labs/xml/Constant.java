@@ -1,7 +1,7 @@
 package com.sen5labs.xml;
 
 public class Constant {
-    public static final String XML_FILE_NAME = "new.iptv.xml";
+    public static final String XML_FILE_NAME = "new.iptv";
 
     public static final String ROOT = "root";
     public static final String SERVERS = "servers";

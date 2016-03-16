@@ -19,6 +19,7 @@ import java.util.Scanner;
 public class BigNumSub {
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner cin = new Scanner(System.in);
         String minuend;// 被减数
         String meiosis;// 减数

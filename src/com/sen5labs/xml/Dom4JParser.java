@@ -5,9 +5,9 @@
  */
 package com.sen5labs.xml;
 
-import java.util.List;
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.dom4j.Document;
 import org.dom4j.Element;

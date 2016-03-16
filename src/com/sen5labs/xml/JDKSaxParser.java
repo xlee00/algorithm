@@ -32,6 +32,17 @@ public class JDKSaxParser implements ServerParser {
      * @throws SAXException
      */
     public JDKSaxParser() throws SAXException {
+        // 在android中的初始化方式
+        // SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+        // SAXParser newSAXParser = null;
+        // try {
+        // newSAXParser = saxParserFactory.newSAXParser();
+        // reader = newSAXParser.getXMLReader();
+        // } catch (ParserConfigurationException e) {
+        // e.printStackTrace();
+        // }
+
+        // 在java中的实现方式
         reader = XMLReaderFactory.createXMLReader();
     }
 
@@ -42,4 +53,26 @@ public class JDKSaxParser implements ServerParser {
         reader.parse(xmlFilePath);
         return handler.getHostList();
     }
+
+    // @Override //android中的实现方式,输入文件流
+    // public List<Host> getServer(Context context, String xmlFilePath) throws
+    // Exception {
+    // ResourceHandler handler = new ResourceHandler();
+    // reader.setContentHandler(handler);
+    // FileInputStream fileInputStream = null;
+    // try {
+    // File xmlFile = new File(xmlFilePath);
+    // fileInputStream = new FileInputStream(xmlFile);
+    // InputSource is = new InputSource(fileInputStream);// 取得本地xml文件
+    // reader.parse(is);
+    // return handler.getHostList();
+    // } catch (FileNotFoundException e) {
+    // e.printStackTrace();
+    // } finally {
+    // if (null != fileInputStream) {
+    // FileUtils.closeIO(fileInputStream);
+    // }
+    // }
+    // return null;
+    // }
 }
